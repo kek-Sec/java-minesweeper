@@ -19,11 +19,9 @@ public class SplashScreen extends JFrame {
     /**
      * Creates new form SplashScreen
      * 
-     * @param gameModeMenu
      */
     public SplashScreen() {
         initComponents();
-        _GameModeMenu = new GameModeMenu();
         this.setVisible(true);
     }
 
@@ -33,26 +31,30 @@ public class SplashScreen extends JFrame {
      * Then show the game mode menu.
      */
     public void initComponents() {
-        setSize(500, 500);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setResizable(false);
-        setLayout(null);
-        setVisible(true);
-        setContentPane(new JPanel() {
+        _GameModeMenu = new GameModeMenu();
+        //hide controls
+        this.setUndecorated(true);
+        this.setSize(180, 180);
+        //center the frame
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setContentPane(new JPanel() {
             @Override
             public void paintComponent(java.awt.Graphics g) {
                 super.paintComponent(g);
                 g.drawImage(new javax.swing.ImageIcon(image).getImage(), 0, 0, null);
             }
         });
+        this.setVisible(true);
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         this.setVisible(false);
-        _GameModeMenu.setVisible(true);
+        this.setContentPane(_GameModeMenu);
+        this.setSize(200,180);
+        this.setVisible(true);
     }
 
 }
