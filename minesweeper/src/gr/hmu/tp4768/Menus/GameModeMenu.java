@@ -5,7 +5,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import gr.hmu.tp4768.Listeners.Menus.GameModeMenuListener;
-import gr.hmu.tp4768.Models.GameModes;
 
 /**
  * @author tp4768
