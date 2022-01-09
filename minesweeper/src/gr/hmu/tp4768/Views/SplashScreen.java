@@ -21,9 +21,9 @@ public class SplashScreen extends JFrame {
      * 
      * @param gameModeMenu
      */
-    public SplashScreen(GameModeMenu gameModeMenu) {
+    public SplashScreen() {
         initComponents();
-        _GameModeMenu = gameModeMenu;
+        _GameModeMenu = new GameModeMenu();
         this.setVisible(true);
     }
 
