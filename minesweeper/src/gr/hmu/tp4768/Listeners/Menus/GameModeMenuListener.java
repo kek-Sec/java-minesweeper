@@ -21,17 +21,17 @@ public class GameModeMenuListener implements java.awt.event.ActionListener {
         //if button name is Easy
         if(e.getActionCommand().equals("Easy")){
             //set game mode to easy
-            GameController.gameMode = new GameMode(Difficulty.EASY);
+            GameController.setGameMode(new GameMode(Difficulty.EASY)); 
         }
         //if button name is Medium
         else if(e.getActionCommand().equals("Medium")){
             //set game mode to medium
-            GameController.gameMode = new GameMode(Difficulty.MEDIUM);
+            GameController.setGameMode(new GameMode(Difficulty.MEDIUM));
         }
         //if button name is Hard
         else if(e.getActionCommand().equals("Hard")){
             //set game mode to hard
-            GameController.gameMode = new GameMode(Difficulty.HARD);
+            GameController.setGameMode(new GameMode(Difficulty.HARD));
         }
         else{
             return;
