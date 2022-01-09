@@ -8,12 +8,6 @@ public enum GameModes {
     EASY, MEDIUM, HARD;
 
     /**
-     * constructor
-     */
-    private GameModes() {
-    }
-
-    /**
      * @return the difficulty
      */
     public String getDifficulty() {
