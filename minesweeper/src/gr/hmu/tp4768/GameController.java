@@ -8,5 +8,20 @@ import gr.hmu.tp4768.Models.GameMode;
  * Game controller is a static class that contains the game variables.
  */
 public class GameController {
-    public static GameMode gameMode;
+    private static GameMode gameMode;
+
+    /**
+     * Function to update the game mode.
+     */
+    public static void setGameMode(GameMode gameMode) {
+        GameController.gameMode = gameMode;
+    }
+
+    /**
+     * Function to get the game mode.
+     */
+    public static GameMode getGameMode() {
+        return gameMode;
+    }
+
 }
