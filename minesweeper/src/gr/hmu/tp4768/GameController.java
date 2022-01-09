@@ -15,6 +15,8 @@ public class GameController {
      */
     public static void setGameMode(GameMode gameMode) {
         GameController.gameMode = gameMode;
+        //print that the game mode has been changed and the new game mode
+        System.out.println("Game mode changed to " + gameMode.getDifficulty());
     }
 
     /**
