@@ -5,7 +5,7 @@ package gr.hmu.tp4768.Listeners.Menus;
  * Listener for the game mode menu.
  */
 public class GameModeMenuListener implements java.awt.event.ActionListener {
-
+    
     /**
      * @param e
      * @return
@@ -13,7 +13,6 @@ public class GameModeMenuListener implements java.awt.event.ActionListener {
      */
     @Override
     public void actionPerformed(java.awt.event.ActionEvent e) {
-        // TODO Auto-generated method stub
-        System.out.println("GameModeMenuListener");
+    
     }
 }
