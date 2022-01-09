@@ -45,6 +45,8 @@ public class Board extends JFrame{
      * 
      */
     public void createBoard(){
+        //display the Frame in the center of the screen
+        setLocationRelativeTo(null);
         //set the size of the board
         setSize(new Dimension(300, 300));
         //set the title of the board
@@ -78,7 +80,10 @@ public class Board extends JFrame{
         }
         //add the action listener to the buttons
         //addActionListener();
-
+        
+        //set default close operation
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
         //set the visibility of the board
         pack();
         setVisible(true);
