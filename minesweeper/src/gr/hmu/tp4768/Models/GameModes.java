@@ -6,6 +6,13 @@ package gr.hmu.tp4768.Models;
  */
 public enum GameModes {
     EASY, MEDIUM, HARD;
+
+    /**
+     * constructor
+     */
+    private GameModes() {
+    }
+
     /**
      * @return the difficulty
      */
