@@ -1,6 +1,7 @@
 package gr.hmu.tp4768.Models;
 /**
  * @author tp4768
+ * 
  * Model describing all the information about a running minesweeper game.
  * Contains information such as,
  * - the number of mines in the game
