@@ -1,6 +1,7 @@
 package gr.hmu.tp4768;
 
 import gr.hmu.tp4768.Models.GameMode;
+import gr.hmu.tp4768.Views.Board;
 
 /**
  * @author tp4768
@@ -17,6 +18,8 @@ public class GameController {
         GameController.gameMode = gameMode;
         //print that the game mode has been changed and the new game mode
         System.out.println("Game mode changed to " + gameMode.getDifficulty());
+        //display Board
+        Board board = new Board(getGameMode());
     }
 
     /**
