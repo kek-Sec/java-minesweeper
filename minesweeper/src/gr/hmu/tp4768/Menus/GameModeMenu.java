@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import gr.hmu.tp4768.Listeners.Menus.GameModeMenuListener;
+import gr.hmu.tp4768.Views.SplashScreen;
 
 /**
  * @author tp4768
@@ -13,6 +14,7 @@ import gr.hmu.tp4768.Listeners.Menus.GameModeMenuListener;
  */
 public class GameModeMenu extends JPanel {
 
+    SplashScreen _Parent;
     GameModeMenuListener _MenuListener;
     /**
      * Menu buttons
@@ -26,13 +28,16 @@ public class GameModeMenu extends JPanel {
      * form GameModeMenu
      * @param gameModeMenuListener
      */
-    public GameModeMenu() {
+    public GameModeMenu(SplashScreen ParentFrame) {
+        _Parent = ParentFrame;
         initComponents();
         this.setVisible(true);
     }
 
     /**
      * Function to initialize the components of the game mode menu.
+     * Action Handling is done in a seperate class but keep in mind that we pass the parent JFrame to the action handler
+     * in order to be able to close the parent frame. when the user clicks on a button.
      */
     public void initComponents(){
         _MenuListener = new GameModeMenuListener();
@@ -41,13 +46,13 @@ public class GameModeMenu extends JPanel {
         this.add(_Label);
         //add buttons below label
         _EasyButton = new JButton("Easy");
-        _EasyButton.addActionListener(_MenuListener.actionPerformedEasy());
+        _EasyButton.addActionListener(_MenuListener.actionPerformedEasy(this._Parent));
         this.add(_EasyButton);
         _MediumButton = new JButton("Medium");
-        _MediumButton.addActionListener(_MenuListener.actionPerformedMedium());
+        _MediumButton.addActionListener(_MenuListener.actionPerformedMedium(this._Parent));
         this.add(_MediumButton);
         _HardButton = new JButton("Hard");
-        _HardButton.addActionListener(_MenuListener.actionPerformedHard());
+        _HardButton.addActionListener(_MenuListener.actionPerformedHard(this._Parent));
         this.add(_HardButton);
     }
 }

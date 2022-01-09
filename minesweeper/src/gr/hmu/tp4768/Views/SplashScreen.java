@@ -31,7 +31,7 @@ public class SplashScreen extends JFrame {
      * Then show the game mode menu.
      */
     public void initComponents() {
-        _GameModeMenu = new GameModeMenu();
+        _GameModeMenu = new GameModeMenu(this);
         //hide controls
         this.setUndecorated(true);
         this.setSize(180, 180);

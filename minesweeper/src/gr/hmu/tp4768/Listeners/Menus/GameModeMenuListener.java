@@ -1,6 +1,8 @@
 package gr.hmu.tp4768.Listeners.Menus;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -19,12 +21,14 @@ public class GameModeMenuListener {
     /**
      * Action listener to catch easy button press.
      */
-    public ActionListener actionPerformedEasy() {
+    public ActionListener actionPerformedEasy(JFrame parent) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //set game mode to easy
                 GameController.setGameMode(new GameMode(Difficulty.EASY));
+                //close parent
+                parent.dispose();
             }
         };
     }
@@ -32,12 +36,14 @@ public class GameModeMenuListener {
     /**
      * Action listener to catch medium button press.
      */
-    public ActionListener actionPerformedMedium() {
+    public ActionListener actionPerformedMedium(JFrame parent) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //set game mode to medium
                 GameController.setGameMode(new GameMode(Difficulty.MEDIUM));
+                //close parent
+                parent.dispose();
             }
         };
     }
@@ -45,12 +51,14 @@ public class GameModeMenuListener {
     /**
      * Action listener to catch hard button press.
      */
-    public ActionListener actionPerformedHard() {
+    public ActionListener actionPerformedHard(JFrame parent) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //set game mode to hard
                 GameController.setGameMode(new GameMode(Difficulty.HARD));
+                //close parent
+                parent.dispose();
             }
         };
     }
