@@ -1,4 +1,9 @@
 package gr.hmu.tp4768.Listeners.Menus;
+
+import gr.hmu.tp4768.GameController;
+import gr.hmu.tp4768.Models.Difficulty;
+import gr.hmu.tp4768.Models.GameMode;
+
 /**
  * @author tp4768
  * 
@@ -13,6 +18,23 @@ public class GameModeMenuListener implements java.awt.event.ActionListener {
      */
     @Override
     public void actionPerformed(java.awt.event.ActionEvent e) {
-    
+        //if button name is Easy
+        if(e.getActionCommand().equals("Easy")){
+            //set game mode to easy
+            GameController.gameMode = new GameMode(Difficulty.EASY);
+        }
+        //if button name is Medium
+        else if(e.getActionCommand().equals("Medium")){
+            //set game mode to medium
+            GameController.gameMode = new GameMode(Difficulty.MEDIUM);
+        }
+        //if button name is Hard
+        else if(e.getActionCommand().equals("Hard")){
+            //set game mode to hard
+            GameController.gameMode = new GameMode(Difficulty.HARD);
+        }
+        else{
+            return;
+        }
     }
 }
