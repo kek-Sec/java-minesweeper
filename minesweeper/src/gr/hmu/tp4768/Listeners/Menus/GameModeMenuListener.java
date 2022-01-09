@@ -1,5 +1,9 @@
 package gr.hmu.tp4768.Listeners.Menus;
 
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 import gr.hmu.tp4768.GameController;
 import gr.hmu.tp4768.Models.Difficulty;
 import gr.hmu.tp4768.Models.GameMode;
@@ -9,32 +13,45 @@ import gr.hmu.tp4768.Models.GameMode;
  * 
  * Listener for the game mode menu.
  */
-public class GameModeMenuListener implements java.awt.event.ActionListener {
+public class GameModeMenuListener {
     
+
     /**
-     * @param e
-     * @return
-     * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+     * Action listener to catch easy button press.
      */
-    @Override
-    public void actionPerformed(java.awt.event.ActionEvent e) {
-        //if button name is Easy
-        if(e.getActionCommand().equals("Easy")){
-            //set game mode to easy
-            GameController.setGameMode(new GameMode(Difficulty.EASY)); 
-        }
-        //if button name is Medium
-        else if(e.getActionCommand().equals("Medium")){
-            //set game mode to medium
-            GameController.setGameMode(new GameMode(Difficulty.MEDIUM));
-        }
-        //if button name is Hard
-        else if(e.getActionCommand().equals("Hard")){
-            //set game mode to hard
-            GameController.setGameMode(new GameMode(Difficulty.HARD));
-        }
-        else{
-            return;
-        }
+    public ActionListener actionPerformedEasy() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //set game mode to easy
+                GameController.setGameMode(new GameMode(Difficulty.EASY));
+            }
+        };
+    }
+
+    /**
+     * Action listener to catch medium button press.
+     */
+    public ActionListener actionPerformedMedium() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //set game mode to medium
+                GameController.setGameMode(new GameMode(Difficulty.MEDIUM));
+            }
+        };
+    }
+
+    /**
+     * Action listener to catch hard button press.
+     */
+    public ActionListener actionPerformedHard() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //set game mode to hard
+                GameController.setGameMode(new GameMode(Difficulty.HARD));
+            }
+        };
     }
 }

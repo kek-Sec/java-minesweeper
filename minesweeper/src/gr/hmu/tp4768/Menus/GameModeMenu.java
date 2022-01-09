@@ -28,7 +28,6 @@ public class GameModeMenu extends JPanel {
      */
     public GameModeMenu() {
         initComponents();
-        _MenuListener = new GameModeMenuListener();
         this.setVisible(true);
     }
 
@@ -36,18 +35,19 @@ public class GameModeMenu extends JPanel {
      * Function to initialize the components of the game mode menu.
      */
     public void initComponents(){
+        _MenuListener = new GameModeMenuListener();
         //add label
         _Label = new JLabel("Choose Game Mode      ");
         this.add(_Label);
         //add buttons below label
         _EasyButton = new JButton("Easy");
-        _EasyButton.addActionListener(_MenuListener);
+        _EasyButton.addActionListener(_MenuListener.actionPerformedEasy());
         this.add(_EasyButton);
         _MediumButton = new JButton("Medium");
-        _MediumButton.addActionListener(_MenuListener);
+        _MediumButton.addActionListener(_MenuListener.actionPerformedMedium());
         this.add(_MediumButton);
         _HardButton = new JButton("Hard");
-        _HardButton.addActionListener(_MenuListener);
+        _HardButton.addActionListener(_MenuListener.actionPerformedHard());
         this.add(_HardButton);
     }
 }
