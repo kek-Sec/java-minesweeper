@@ -14,7 +14,6 @@ import gr.hmu.tp4768.Models.GameModes;
 public class GameModeMenu extends JPanel {
 
     GameModeMenuListener _MenuListener;
-    GameModes _GameMode;
     /**
      * Menu buttons
      */
@@ -23,13 +22,11 @@ public class GameModeMenu extends JPanel {
     /**
      * Creates new
      * form GameModeMenu
-     * @param gameMode
      * @param gameModeMenuListener
      */
-    public GameModeMenu(GameModes gameMode, GameModeMenuListener gameModeMenuListener) {
+    public GameModeMenu() {
         initComponents();
-        _GameMode = gameMode;
-        _MenuListener = gameModeMenuListener;
+        _MenuListener = new GameModeMenuListener();
         this.setVisible(true);
     }
 
