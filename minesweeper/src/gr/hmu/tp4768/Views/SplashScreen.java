@@ -53,7 +53,7 @@ public class SplashScreen extends JFrame {
         }
         this.setVisible(false);
         this.setContentPane(_GameModeMenu);
-        this.setSize(200,180);
+        this.setSize(200,140);
         this.setVisible(true);
     }
 
