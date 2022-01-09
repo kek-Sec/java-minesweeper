@@ -78,6 +78,10 @@ public class Board extends JFrame{
         }
         //add the action listener to the buttons
         //addActionListener();
+
+        //set the visibility of the board
+        pack();
+        setVisible(true);
     }
 
 } 
