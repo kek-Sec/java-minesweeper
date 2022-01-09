@@ -2,14 +2,17 @@ package gr.hmu.tp4768.Menus;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JMenuBar;
+import javax.swing.JPanel;
+import java.awt.GridLayout;
 
 /**
  * @author tp4768
  * 
- * Extends JToolBar to create a toolbar, to be placed on top of the Board with the following buttons:
+ * extends JMenuBar and creates a menu to be placed at the top of the Board with the following buttons:
  * New Game, Save Game, Load Game, Exit, Help, About.
  */
-public class GameToolBar extends javax.swing.JToolBar {
+public class GameToolBar extends JMenuBar {
 
     /**
      * Buttons
@@ -22,10 +25,17 @@ public class GameToolBar extends javax.swing.JToolBar {
     }
 
     /**
-     * Function to initialize the components of the game toolbar.
+     * Initialize the components of the menu bar.
      */
     private void initComponents() {
-        //create buttons
+        // Create the menu bar.
+        JMenuBar menuBar = new JMenuBar();
+
+        // Create the menu.
+        JPanel menuPanel = new JPanel();
+        menuPanel.setLayout(new GridLayout(1, 6));
+
+        // Create the buttons.
         _NewGameButton = new JButton("New Game");
         _SaveGameButton = new JButton("Save Game");
         _LoadGameButton = new JButton("Load Game");
@@ -33,20 +43,18 @@ public class GameToolBar extends javax.swing.JToolBar {
         _HelpButton = new JButton("Help");
         _AboutButton = new JButton("About");
 
-        //add buttons to toolbar
-        this.add(_NewGameButton);
-        this.add(_SaveGameButton);
-        this.add(_LoadGameButton);
-        this.add(_ExitButton);
-        this.add(_HelpButton);
-        this.add(_AboutButton);
+        // Add the buttons to the menu.
+        menuPanel.add(_NewGameButton);
+        menuPanel.add(_SaveGameButton);
+        menuPanel.add(_LoadGameButton);
+        menuPanel.add(_ExitButton);
+        menuPanel.add(_HelpButton);
+        menuPanel.add(_AboutButton);
 
-        //add action listeners
+        // Add the menu to the menu bar.
+        menuBar.add(menuPanel);
 
-        //place toolbar on top of the parent frame
-        this.setFloatable(false);
-        this.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        this.setRollover(true);
-        this.setVisible(true);
+        // Add the menu bar to the frame.
+        add(menuBar);
     }
 }
