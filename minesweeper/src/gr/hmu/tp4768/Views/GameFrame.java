@@ -1,4 +1,6 @@
 package gr.hmu.tp4768.Views;
+
+import javax.swing.JFrame;
 /**
  * @author tp4768
  * 
@@ -6,8 +8,6 @@ package gr.hmu.tp4768.Views;
  * It consists of , a game tool bar, a board and a status bar.
  * 
  */
-
-import javax.swing.JFrame;
 
 public class GameFrame extends JFrame{
     
