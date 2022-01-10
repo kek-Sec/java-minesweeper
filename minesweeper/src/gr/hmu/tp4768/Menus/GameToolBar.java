@@ -4,6 +4,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
+
+import gr.hmu.tp4768.Listeners.Menus.GameToolBarListener;
+
 import java.awt.GridLayout;
 
 /**
@@ -50,6 +53,15 @@ public class GameToolBar extends JMenuBar {
         menuPanel.add(_ExitButton);
         menuPanel.add(_HelpButton);
         menuPanel.add(_AboutButton);
+
+        //Add listeners to the buttons from GameToolBarListener
+        GameToolBarListener listener = new GameToolBarListener();
+        _NewGameButton.addActionListener(listener.actionPerformedNewGame(_parent));
+        _SaveGameButton.addActionListener(listener.actionPerformedSaveGame(_parent));
+        _LoadGameButton.addActionListener(listener.actionPerformedLoadGame(_parent));
+        _ExitButton.addActionListener(listener.actionPerformedExit(_parent));
+        _HelpButton.addActionListener(listener.actionPerformedHelp(_parent));
+        _AboutButton.addActionListener(listener.actionPerformedAbout(_parent));
 
         // Add the menu to the menu bar.
         menuBar.add(menuPanel);
