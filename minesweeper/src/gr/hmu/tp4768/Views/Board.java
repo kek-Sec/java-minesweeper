@@ -58,7 +58,7 @@ public class Board extends JPanel{
                 _buttons[i][j].setPreferredSize(new Dimension(30, 30));
                 _buttons[i][j].setBackground(Color.LIGHT_GRAY);
                 _buttons[i][j].setFont(new Font("Arial", Font.BOLD, 20));
-                _buttons[i][j].setEnabled(false);
+                _buttons[i][j].setEnabled(true);
                 boardPanel.add(_buttons[i][j]);
             }
         }
