@@ -29,6 +29,9 @@ public class BoardListener {
             public void actionPerformed(ActionEvent e) {
                 //get the square that was clicked
                 Square square = squares[row][col];
+                squares[row][col].setRevealed(true);
+                //prety print the square
+                System.out.println(square.toString());
                 //if the square is not flagged
                 if(!square.isFlagged()) {
                     //if the square is not revealed
