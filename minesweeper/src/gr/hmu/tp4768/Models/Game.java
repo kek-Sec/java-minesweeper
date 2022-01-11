@@ -134,5 +134,23 @@ public class Game {
         this.Grid = Grid;
     }
 
+    /**
+     * Function to populate the Grid with squares based on the GameMode difficulty
+     * 
+     * @param gameMode
+     */
+    public void populateGrid(GameMode gamemode){
+        //get the number of mines in the game
+        int mines = gamemode.getNumberOfMines();
+        this.mines = mines;
+        //get the number of rows in the game
+        int rows = gamemode.getNumberOfRows();
+        this.rows = rows;
+        //get the number of columns in the game
+        int columns = gamemode.getNumberOfColumns();
+        this.columns = columns;
+        
+    }
+
     
 }
