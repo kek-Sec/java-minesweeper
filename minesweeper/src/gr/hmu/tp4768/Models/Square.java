@@ -30,6 +30,18 @@ public class Square {
         this.adjacentMines = adjacentMines;
         this.button = button;
     }
+
+    /**
+     * Empty constructor for the square.
+     */
+    public Square() {
+        this.isMine = false;
+        this.isRevealed = false;
+        this.isFlagged = false;
+        this.adjacentMines = 0;
+        this.button = null;
+    }
+
     /**
      * @return the isMine
      */
@@ -77,6 +89,13 @@ public class Square {
      */
     public void setAdjacentMines(int adjacentMines) {
         this.adjacentMines = adjacentMines;
+    }
+    /**
+     * set the button of the square.
+     * @param button
+     */
+    public void setButton(JButton button) {
+        this.button = button;
     }
     /**
      * Function to set button text to the adjacentMines.
