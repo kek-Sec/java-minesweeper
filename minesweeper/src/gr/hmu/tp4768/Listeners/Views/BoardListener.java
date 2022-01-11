@@ -51,7 +51,7 @@ public class BoardListener {
                             //if the square is not a mine and has no adjacent mines
                             if(square.getAdjacentMines() == 0) {
                                 //reveal all the adjacent squares
-                                
+                                game.revealAdjacentSquares(row, col, squares);
                                 
                             }
                         }
