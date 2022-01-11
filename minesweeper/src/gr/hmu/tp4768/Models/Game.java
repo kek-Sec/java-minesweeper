@@ -139,7 +139,7 @@ public class Game {
      * 
      * @param gameMode
      */
-    public void populateGrid(GameMode gamemode){
+    public Square[][] populateGrid(GameMode gamemode,Square[][] Grid){
         //get the number of mines in the game
         int mines = gamemode.getNumberOfMines();
         this.mines = mines;
@@ -149,6 +149,20 @@ public class Game {
         //get the number of columns in the game
         int columns = gamemode.getNumberOfColumns();
         this.columns = columns;
+        //place the mines in the grid randomly
+        for(int i = 0; i < mines; i++){
+            int row = (int)(Math.random()*rows);
+            int column = (int)(Math.random()*columns);
+            Grid[row][column].setMine(true);
+        }
+        //set the number of mines left to find
+        this.minesLeft = mines;
+        //set the number of mines flagged
+        this.minesFlagged = 0;
+        //set the number of mines revealed
+        this.minesRevealed = 0;
+        //return the grid
+        return Grid;
         
     }
 
