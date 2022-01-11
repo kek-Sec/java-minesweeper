@@ -29,8 +29,6 @@ public class BoardListener {
             public void actionPerformed(ActionEvent e) {
                 //get the square that was clicked
                 Square square = squares[row][col];
-                squares[row][col].setRevealed(true);
-                squares[row][col].setButtonText();
                 //prety print the square
                 System.out.println(square.toString());
                 //if the square is not flagged
@@ -39,10 +37,12 @@ public class BoardListener {
                     if(!square.isRevealed()) {
                         //reveal the square
                         square.setRevealed(true);
+                        //set text
+                        square.setButtonText();
                         //if the square is a mine
                         if(square.isMine()) {
                             //reveal all the mines
-                           
+                            game.displayMines(squares);
                             //show the game over dialog
                             
                         }
@@ -51,6 +51,7 @@ public class BoardListener {
                             //if the square is not a mine and has no adjacent mines
                             if(square.getAdjacentMines() == 0) {
                                 //reveal all the adjacent squares
+                                
                                 
                             }
                         }

@@ -165,6 +165,9 @@ public class Game {
      * 
      */
     public void displayMines(Square[][] Grid) {
+        //print text
+        System.out.println("Mines:");
+
         for (int i = 0; i < Grid.length; i++) {
             for (int j = 0; j < Grid[i].length; j++) {
                 if (Grid[i][j].isMine()) {
