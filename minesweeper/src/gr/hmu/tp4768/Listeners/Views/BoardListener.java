@@ -1,5 +1,6 @@
 package gr.hmu.tp4768.Listeners.Views;
 
+import gr.hmu.tp4768.Menus.StatusBar;
 import gr.hmu.tp4768.Models.Game;
 import javax.swing.SwingUtilities;
 import gr.hmu.tp4768.Models.Square;
@@ -71,6 +72,8 @@ public class BoardListener {
                             // flag the square
                             square.setFlagged(true);
                             square.setFlag();
+                            //decrease the number of flags
+                            StatusBar._flagsLeft--;
                         }
                         // if the square is flagged
                         else {
