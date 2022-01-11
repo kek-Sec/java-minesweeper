@@ -67,7 +67,7 @@ public class Square {
      * @param isRevealed the isRevealed to set
      */
     public void setRevealed(boolean isRevealed) {
-        if (!isRevealed) {
+        if (isRevealed) {
             this.clearButton();
         }
         this.isRevealed = isRevealed;

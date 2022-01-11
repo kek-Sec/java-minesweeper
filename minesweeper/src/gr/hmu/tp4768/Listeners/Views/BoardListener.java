@@ -30,6 +30,7 @@ public class BoardListener {
                 //get the square that was clicked
                 Square square = squares[row][col];
                 squares[row][col].setRevealed(true);
+                squares[row][col].setButtonText();
                 //prety print the square
                 System.out.println(square.toString());
                 //if the square is not flagged
