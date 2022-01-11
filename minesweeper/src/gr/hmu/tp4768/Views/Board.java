@@ -21,13 +21,14 @@ import javax.swing.JPanel;
 
 import gr.hmu.tp4768.Menus.GameToolBar;
 import gr.hmu.tp4768.Models.GameMode;
+import gr.hmu.tp4768.Models.Square;
 
 public class Board extends JPanel{
 
     private GameMode _gameMode;
     private int _rows;
     private int _columns;
-    private JButton[][] _buttons;
+    private Square[][] _squares;
 
     /**
      * constructor
@@ -51,15 +52,17 @@ public class Board extends JPanel{
         setLayout(new BorderLayout());
         JPanel boardPanel = new JPanel();
         boardPanel.setLayout(new GridLayout(_rows, _columns));
-        _buttons = new JButton[_rows][_columns];
-        for(int i = 0; i < _rows; i++){
-            for(int j = 0; j < _columns; j++){
-                _buttons[i][j] = new JButton();
-                _buttons[i][j].setPreferredSize(new Dimension(30, 30));
-                _buttons[i][j].setBackground(Color.LIGHT_GRAY);
-                _buttons[i][j].setFont(new Font("Arial", Font.BOLD, 20));
-                _buttons[i][j].setEnabled(true);
-                boardPanel.add(_buttons[i][j]);
+        _squares = new Square[_rows][_columns];
+        //create a new button for each cell and add it to the board
+        for (int i = 0; i < _rows; i++) {
+            for (int j = 0; j < _columns; j++) {
+                JButton button = new JButton();
+                button.setBackground(Color.LIGHT_GRAY);
+                button.setFont(new Font("Arial", Font.BOLD, 20));
+                button.setPreferredSize(new Dimension(30, 30));
+                button.setEnabled(false);
+                boardPanel.add(button);
+                _squares[i][j].setButton(button);
             }
         }
         add(boardPanel, BorderLayout.CENTER);
