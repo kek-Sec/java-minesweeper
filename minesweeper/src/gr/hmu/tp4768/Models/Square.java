@@ -4,8 +4,8 @@ import javax.swing.JButton;
 
 /**
  * @author tp4768
- * Model describing a minesweeper square.
- * Contains all the information about the square.
+ *         Model describing a minesweeper square.
+ *         Contains all the information about the square.
  */
 public class Square {
     private boolean isMine;
@@ -14,9 +14,9 @@ public class Square {
     private int adjacentMines;
     private JButton button;
 
-    
     /**
      * Constructor for the square.
+     * 
      * @param isMine
      * @param isRevealed
      * @param isFlagged
@@ -48,55 +48,68 @@ public class Square {
     public boolean isMine() {
         return isMine;
     }
+
     /**
      * @param isMine the isMine to set
      */
     public void setMine(boolean isMine) {
         this.isMine = isMine;
     }
+
     /**
      * @return the isRevealed
      */
     public boolean isRevealed() {
         return isRevealed;
     }
+
     /**
      * @param isRevealed the isRevealed to set
      */
     public void setRevealed(boolean isRevealed) {
+        if (!isRevealed) {
+            this.clearButton();
+        }
         this.isRevealed = isRevealed;
     }
+
     /**
      * @return the isFlagged
      */
     public boolean isFlagged() {
         return isFlagged;
     }
+
     /**
      * @param isFlagged the isFlagged to set
      */
     public void setFlagged(boolean isFlagged) {
         this.isFlagged = isFlagged;
     }
+
     /**
      * @return the adjacentMines
      */
     public int getAdjacentMines() {
         return adjacentMines;
     }
+
     /**
      * @param adjacentMines the adjacentMines to set
      */
     public void setAdjacentMines(int adjacentMines) {
         this.adjacentMines = adjacentMines;
     }
+
     /**
      * set the button of the square.
+     * 
      * @param button
      */
     public void setButton(JButton button) {
         this.button = button;
     }
+
     /**
      * Function to set button text to the adjacentMines.
      */

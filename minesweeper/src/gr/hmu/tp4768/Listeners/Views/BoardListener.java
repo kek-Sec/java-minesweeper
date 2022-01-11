@@ -26,7 +26,31 @@ public class BoardListener {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Do stuff
+                //get the square that was clicked
+                Square square = squares[row][col];
+                //if the square is not flagged
+                if(!square.isFlagged()) {
+                    //if the square is not revealed
+                    if(!square.isRevealed()) {
+                        //reveal the square
+                        square.setRevealed(true);
+                        //if the square is a mine
+                        if(square.isMine()) {
+                            //reveal all the mines
+                           
+                            //show the game over dialog
+                            
+                        }
+                        //if the square is not a mine
+                        else {
+                            //if the square is not a mine and has no adjacent mines
+                            if(square.getAdjacentMines() == 0) {
+                                //reveal all the adjacent squares
+                                
+                            }
+                        }
+                    }
+                }
                
             }
         };
