@@ -20,6 +20,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import gr.hmu.tp4768.Menus.GameToolBar;
+import gr.hmu.tp4768.Models.Game;
 import gr.hmu.tp4768.Models.GameMode;
 import gr.hmu.tp4768.Models.Square;
 
@@ -29,11 +30,13 @@ public class Board extends JPanel{
     private int _rows;
     private int _columns;
     private Square[][] _squares;
+    private Game _game;
 
     /**
      * constructor
      */
     public Board(GameMode gameMode){
+        _game = new Game();
         _gameMode = gameMode;
         _rows = _gameMode.getNumberOfRows();
         _columns = _gameMode.getNumberOfRows();
@@ -56,6 +59,7 @@ public class Board extends JPanel{
         //create a new button for each cell and add it to the board
         for (int i = 0; i < _rows; i++) {
             for (int j = 0; j < _columns; j++) {
+                _squares[i][j] = new Square();
                 JButton button = new JButton();
                 button.setBackground(Color.LIGHT_GRAY);
                 button.setFont(new Font("Arial", Font.BOLD, 20));
@@ -65,6 +69,8 @@ public class Board extends JPanel{
                 _squares[i][j].setButton(button);
             }
         }
+        //populate the board with mines , update Game
+        _squares = _game.populateGrid(_gameMode,_squares);
         add(boardPanel, BorderLayout.CENTER);
     }
 
