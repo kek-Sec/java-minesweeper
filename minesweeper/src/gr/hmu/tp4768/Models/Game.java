@@ -218,12 +218,11 @@ public class Game {
         for (int i = 0; i < Grid.length; i++) {
             for (int j = 0; j < Grid[i].length; j++) {
                 if (Grid[i][j].isMine()) {
-                    Grid[i][j].setRevealed(true);
+                    Grid[i][j].setMine();
                 } else {
 
                 }
             }
-            System.out.println();
         }
     }
 
