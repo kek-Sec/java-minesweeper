@@ -41,6 +41,19 @@ public class Game {
         this.columns = columns;
         this.Grid = Grid;
     }
+    /**
+     * Empty constructor for the game.
+     * @return
+     */
+    public Game() {
+        this.mines = 0;
+        this.minesLeft = 0;
+        this.minesFlagged = 0;
+        this.minesRevealed = 0;
+        this.rows = 0;
+        this.columns = 0;
+        this.Grid = null;
+    }
     
     /**
      * @return the mines
@@ -155,6 +168,8 @@ public class Game {
             int column = (int)(Math.random()*columns);
             Grid[row][column].setMine(true);
         }
+        //set grid
+        this.Grid = Grid;
         //set the number of mines left to find
         this.minesLeft = mines;
         //set the number of mines flagged
