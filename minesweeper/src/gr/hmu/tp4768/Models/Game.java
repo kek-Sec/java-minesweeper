@@ -159,6 +159,43 @@ public class Game {
     }
 
     /**
+     * Function to reveal adjacent squares that have no adjacent mines.
+     * 
+     * @param row
+     * @param column
+     * @param grid
+     */
+    public void revealAdjacentSquares(int row, int column, Square[][] grid) {
+        if (grid[row][column].getAdjacentMines() == 0) {
+            grid[row][column].setRevealed(true);
+            if (row > 0) {
+                revealAdjacentSquares(row - 1, column, grid);
+            }
+            if (row < grid.length - 1) {
+                revealAdjacentSquares(row + 1, column, grid);
+            }
+            if (column > 0) {
+                revealAdjacentSquares(row, column - 1, grid);
+            }
+            if (column < grid[0].length - 1) {
+                revealAdjacentSquares(row, column + 1, grid);
+            }
+            if (row > 0 && column > 0) {
+                revealAdjacentSquares(row - 1, column - 1, grid);
+            }
+            if (row > 0 && column < grid[0].length - 1) {
+                revealAdjacentSquares(row - 1, column + 1, grid);
+            }
+            if (row < grid.length - 1 && column > 0) {
+                revealAdjacentSquares(row + 1, column - 1, grid);
+            }
+            if (row < grid.length - 1 && column < grid[0].length - 1) {
+                revealAdjacentSquares(row + 1, column + 1, grid);
+            }
+        }
+    }
+
+    /**
      * Function to display all the squares that are mines.
      * 
      * @param Square[][]
