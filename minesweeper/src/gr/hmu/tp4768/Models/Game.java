@@ -16,10 +16,6 @@ package gr.hmu.tp4768.Models;
  *         In Grid array we store all the squares in the game. By row
  */
 public class Game {
-    private int mines;
-    private int minesLeft;
-    private int minesFlagged;
-    private int minesRevealed;
     private int rows;
     private int columns;
     private Square[][] Grid;
@@ -35,11 +31,7 @@ public class Game {
      * @param columns
      * @param Grid
      */
-    public Game(int mines, int minesLeft, int minesFlagged, int minesRevealed, int rows, int columns, Square[][] Grid) {
-        this.mines = mines;
-        this.minesLeft = minesLeft;
-        this.minesFlagged = minesFlagged;
-        this.minesRevealed = minesRevealed;
+    public Game(int rows, int columns, Square[][] Grid) {
         this.rows = rows;
         this.columns = columns;
         this.Grid = Grid;
@@ -51,69 +43,9 @@ public class Game {
      * @return
      */
     public Game() {
-        this.mines = 0;
-        this.minesLeft = 0;
-        this.minesFlagged = 0;
-        this.minesRevealed = 0;
         this.rows = 0;
         this.columns = 0;
         this.Grid = null;
-    }
-
-    /**
-     * @return the mines
-     */
-    public int getMines() {
-        return mines;
-    }
-
-    /**
-     * @param mines the mines to set
-     */
-    public void setMines(int mines) {
-        this.mines = mines;
-    }
-
-    /**
-     * @return the minesLeft
-     */
-    public int getMinesLeft() {
-        return minesLeft;
-    }
-
-    /**
-     * @param minesLeft the minesLeft to set
-     */
-    public void setMinesLeft(int minesLeft) {
-        this.minesLeft = minesLeft;
-    }
-
-    /**
-     * @return the minesFlagged
-     */
-    public int getMinesFlagged() {
-        return minesFlagged;
-    }
-
-    /**
-     * @param minesFlagged the minesFlagged to set
-     */
-    public void setMinesFlagged(int minesFlagged) {
-        this.minesFlagged = minesFlagged;
-    }
-
-    /**
-     * @return the minesRevealed
-     */
-    public int getMinesRevealed() {
-        return minesRevealed;
-    }
-
-    /**
-     * @param minesRevealed the minesRevealed to set
-     */
-    public void setMinesRevealed(int minesRevealed) {
-        this.minesRevealed = minesRevealed;
     }
 
     /**
@@ -234,7 +166,6 @@ public class Game {
     public Square[][] populateGrid(GameMode gamemode, Square[][] Grid) {
         // get the number of mines in the game
         int mines = gamemode.getNumberOfMines();
-        this.mines = mines;
         // get the number of rows in the game
         int rows = gamemode.getNumberOfRows();
         this.rows = rows;
@@ -255,12 +186,6 @@ public class Game {
         }
         // set grid
         this.Grid = Grid;
-        // set the number of mines left to find
-        this.minesLeft = mines;
-        // set the number of mines flagged
-        this.minesFlagged = 0;
-        // set the number of mines revealed
-        this.minesRevealed = 0;
         // return the grid
         return Grid;
 
