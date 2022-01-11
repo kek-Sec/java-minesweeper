@@ -19,6 +19,7 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import gr.hmu.tp4768.Listeners.Views.BoardListener;
 import gr.hmu.tp4768.Menus.GameToolBar;
 import gr.hmu.tp4768.Models.Game;
 import gr.hmu.tp4768.Models.GameMode;
@@ -31,11 +32,14 @@ public class Board extends JPanel{
     private int _columns;
     private Square[][] _squares;
     private Game _game;
+    private BoardListener _boardListener;
+    
 
     /**
      * constructor
      */
     public Board(GameMode gameMode){
+        _boardListener = new BoardListener();
         _game = new Game();
         _gameMode = gameMode;
         _rows = _gameMode.getNumberOfRows();
@@ -67,6 +71,8 @@ public class Board extends JPanel{
                 button.setEnabled(false);
                 boardPanel.add(button);
                 _squares[i][j].setButton(button);
+                //add the listener to the button
+                button.addActionListener(_boardListener.actionPerformed());
             }
         }
         //populate the board with mines , update Game
