@@ -2,7 +2,8 @@ package gr.hmu.tp4768.Menus;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
+import java.util.Timer;
+import java.util.TimerTask;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -14,8 +15,8 @@ import java.awt.Color;
  * 
  */
 public class StatusBar extends JPanel {
-        private int _minesLeft;
-        private int _flagsLeft;
+        public static int _minesLeft;
+        public static int _flagsLeft;
 
         private JLabel _minesLeftLabel, _flagsLeftLabel;
 
@@ -28,6 +29,7 @@ public class StatusBar extends JPanel {
                 _minesLeft = minesLeft;
                 _flagsLeft = flagsLeft;
                 initComponents();
+                startTimer();
         }
     
         /**
@@ -51,13 +53,31 @@ public class StatusBar extends JPanel {
             add(_flagsLeftLabel);    
         }
 
+        /**
+         * Function to initialize a timer to update the labels every second.
+         */
+        public void startTimer() {
+            Timer timer = new Timer();
+            timer.scheduleAtFixedRate(new TimerTask() {
+                @Override
+                public void run() {
+                    // update labels
+                    _minesLeftLabel.setText("Mines left: " + _minesLeft);
+                    _flagsLeftLabel.setText("Flags left: " + _flagsLeft);
+                    //refresh the status bar
+                    repaint();
+                }
+            }, 0, 1000);
+        }
+
+        
         // Setters
         public void setMinesLeft(int minesLeft) {
-            this._minesLeft = minesLeft;
+            StatusBar._minesLeft = minesLeft;
         }
 
         public void setFlagsLeft(int flagsLeft) {
-            this._flagsLeft = flagsLeft;
+            StatusBar._flagsLeft = flagsLeft;
         }
 
     
