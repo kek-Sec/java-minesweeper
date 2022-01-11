@@ -111,7 +111,10 @@ public class Square {
      * Function to set button text to the adjacentMines.
      */
     public void setButtonText() {
+        this.setRevealed(true);
         this.button.setText(Integer.toString(this.adjacentMines));
+        //set bg to dark gray
+        this.button.setBackground(java.awt.Color.DARK_GRAY);
     }
 
     /**

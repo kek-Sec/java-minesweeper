@@ -35,16 +35,12 @@ public class BoardListener {
                 if(!square.isFlagged()) {
                     //if the square is not revealed
                     if(!square.isRevealed()) {
-                        //reveal the square
-                        square.setRevealed(true);
-                        //set text
-                        square.setButtonText();
                         //if the square is a mine
                         if(square.isMine()) {
                             //reveal all the mines
                             game.displayMines(squares);
                             //show the game over dialog
-                            
+                            return;
                         }
                         //if the square is not a mine
                         else {
@@ -52,7 +48,11 @@ public class BoardListener {
                             if(square.getAdjacentMines() == 0) {
                                 //reveal all the adjacent squares
                                 game.revealAdjacentSquares(row, col, squares);
-                                
+                            }
+                            //if the square is not a mine and has adjacent mines
+                            else {
+                                //reveal the square
+                                square.setButtonText();
                             }
                         }
                     }
