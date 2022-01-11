@@ -82,6 +82,8 @@ public class BoardListener {
                             if(square.isFlagged()){
                                 square.setFlagged(false);
                                 square.resetButton();
+                                //increase the number of flags
+                                StatusBar._flagsLeft++;
                             }
                         }
                     }
