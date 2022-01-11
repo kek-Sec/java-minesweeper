@@ -74,7 +74,6 @@ public class Board extends JPanel{
                 //add the listener to the button
                 //add listener to right click
                 button.addMouseListener(_boardListener.rightClick(_squares, i, j, _game));
-                //button.addActionListener(_boardListener.actionPerformed(_squares, i, j, _game));
 
             }
         }
