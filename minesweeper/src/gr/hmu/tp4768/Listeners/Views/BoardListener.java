@@ -22,7 +22,7 @@ public class BoardListener {
      * @param parent The parent JFrame
      * 
      */
-    public ActionListener actionPerformed(Square square) {
+    public ActionListener actionPerformed(Square[][] squares,int row,int col) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
