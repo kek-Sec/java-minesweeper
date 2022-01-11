@@ -20,13 +20,12 @@ public class BoardListener {
      * @param parent The parent JFrame
      * 
      */
-    public ActionListener actionPerformed(JFrame parent) {
+    public ActionListener actionPerformed() {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Do stuff
-                //close parent
-                parent.dispose();
+               
             }
         };
     }
