@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
+import gr.hmu.tp4768.Models.Game;
 import gr.hmu.tp4768.Models.Square;
 
 import java.awt.event.ActionEvent;
@@ -22,7 +23,7 @@ public class BoardListener {
      * @param parent The parent JFrame
      * 
      */
-    public ActionListener actionPerformed(Square[][] squares,int row,int col) {
+    public ActionListener actionPerformed(Square[][] squares,int row,int col,Game game) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
