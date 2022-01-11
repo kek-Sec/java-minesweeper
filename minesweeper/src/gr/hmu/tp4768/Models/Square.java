@@ -138,7 +138,7 @@ public class Square {
      * Function to set the button text to F with a red outline.
      */
     public void setFlag() {
-        this.setRevealed(true);
+        this.setRevealed(false);
         this.button.setText("F");
         this.button.setForeground(java.awt.Color.RED);
     }
@@ -160,7 +160,6 @@ public class Square {
         this.setRevealed(false);
         this.button.setText("");
         this.button.setEnabled(true);
-        this.button.setBackground(java.awt.Color.WHITE);
     }
 
     /**
