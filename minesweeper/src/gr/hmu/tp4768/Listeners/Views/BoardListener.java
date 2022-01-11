@@ -20,7 +20,6 @@ public class BoardListener {
     /**
      * Function to handle the button being clicked.
      * 
-     * @param parent The parent JFrame
      * 
      */
     public ActionListener actionPerformed(Square[][] squares,int row,int col,Game game) {
@@ -61,4 +60,11 @@ public class BoardListener {
             }
         };
     }
+    
+    /**
+     * Function to handle right clicking the square.
+     * 
+     * 
+     */
+    
 }
