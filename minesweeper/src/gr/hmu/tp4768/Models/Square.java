@@ -67,9 +67,6 @@ public class Square {
      * @param isRevealed the isRevealed to set
      */
     public void setRevealed(boolean isRevealed) {
-        if (isRevealed) {
-            this.clearButton();
-        }
         this.isRevealed = isRevealed;
     }
 
@@ -128,6 +125,7 @@ public class Square {
      * Function to clear the button text and make it disabled and dark gray.
      */
     public void clearButton() {
+        this.setRevealed(true);
         this.button.setText("");
         this.button.setEnabled(false);
         this.button.setBackground(java.awt.Color.DARK_GRAY);
@@ -137,6 +135,7 @@ public class Square {
      * Function to set the button text to F with a red outline.
      */
     public void setFlag() {
+        this.setRevealed(true);
         this.button.setText("F");
         this.button.setForeground(java.awt.Color.RED);
     }
@@ -145,6 +144,7 @@ public class Square {
      * Function to set the button text to M with a red background and white text.
      */
     public void setMine() {
+        this.setRevealed(true);
         this.button.setText("M");
         this.button.setBackground(java.awt.Color.RED);
         this.button.setForeground(java.awt.Color.WHITE);
