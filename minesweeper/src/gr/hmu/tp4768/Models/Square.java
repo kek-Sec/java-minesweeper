@@ -154,6 +154,16 @@ public class Square {
     }
 
     /**
+     * Function to reset the button text and make it enabled and white.
+     */
+    public void resetButton() {
+        this.setRevealed(false);
+        this.button.setText("");
+        this.button.setEnabled(true);
+        this.button.setBackground(java.awt.Color.WHITE);
+    }
+
+    /**
      * Overload for the toString method.
      * Pretty print the square.
      */

@@ -26,6 +26,25 @@ public class BoardListener {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //if right click
+                if(e.getModifiers() == ActionEvent.CTRL_MASK){
+                    //if square is not flagged
+                    if(!squares[row][col].isFlagged()){
+                        //set square to flagged
+                        squares[row][col].setFlagged(true);
+                        squares[row][col].setFlag();
+                        //increment flags
+                       // game.incrementFlags();
+                       return;
+                    }
+                    //if square is flagged
+                    else{
+                        //set square to not flagged
+                        squares[row][col].setFlagged(false);
+                        //decrement flags
+                        //game.decrementFlags();
+                    }
+                }
                 //get the square that was clicked
                 Square square = squares[row][col];
                 //prety print the square
