@@ -40,7 +40,7 @@ public class GameFrame extends JFrame{
     public void initComponents(){
         GameToolBar gameToolBar = new GameToolBar();
         Board board = new Board(this._gameMode);
-        StatusBar statusBar = new StatusBar(99,99);
+        StatusBar statusBar = new StatusBar(this._gameMode.getNumberOfMines(),this._gameMode.getNumberOfFlags());
         add(gameToolBar, BorderLayout.NORTH);
         add(board, BorderLayout.CENTER);
         add(statusBar, BorderLayout.SOUTH);
