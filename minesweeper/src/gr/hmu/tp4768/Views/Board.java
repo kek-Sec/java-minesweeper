@@ -72,7 +72,7 @@ public class Board extends JPanel{
                 boardPanel.add(button);
                 _squares[i][j].setButton(button);
                 //add the listener to the button
-                button.addActionListener(_boardListener.actionPerformed());
+                button.addActionListener(_boardListener.actionPerformed(_squares[i][j]));
             }
         }
         //populate the board with mines , update Game
