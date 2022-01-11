@@ -75,6 +75,22 @@ public class GameMode {
                 return 0;
         }
     }
+
+    /**
+     * Get number of flags in the game based on the difficulty
+     */
+    public int getNumberOfFlags(){
+        switch(_difficulty){
+            case EASY:
+                return 10;
+            case MEDIUM:
+                return 40;
+            case HARD:
+                return 99;
+            default:
+                return 0;
+        }
+    }
 }
 
 
