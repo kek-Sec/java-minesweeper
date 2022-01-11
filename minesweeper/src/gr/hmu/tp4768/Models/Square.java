@@ -150,4 +150,13 @@ public class Square {
         this.button.setForeground(java.awt.Color.WHITE);
     }
 
+    /**
+     * Overload for the toString method.
+     * Pretty print the square.
+     */
+    @Override
+    public String toString() {
+        return "Square [isMine=" + isMine + ", isRevealed=" + isRevealed + ", isFlagged=" + isFlagged + ", adjacentMines="
+                + adjacentMines + ", button=" + button + "]";
+    }
 }
