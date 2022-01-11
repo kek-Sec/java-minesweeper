@@ -68,7 +68,7 @@ public class Board extends JPanel{
                 button.setBackground(Color.LIGHT_GRAY);
                 button.setFont(new Font("Arial", Font.BOLD, 20));
                 button.setPreferredSize(new Dimension(30, 30));
-                button.setEnabled(false);
+                button.setEnabled(true);
                 boardPanel.add(button);
                 _squares[i][j].setButton(button);
                 //add the listener to the button
