@@ -159,6 +159,25 @@ public class Game {
     }
 
     /**
+     * Function to display all the squares that are mines.
+     * 
+     * @param Square[][]
+     * 
+     */
+    public void displayMines(Square[][] Grid) {
+        for (int i = 0; i < Grid.length; i++) {
+            for (int j = 0; j < Grid[i].length; j++) {
+                if (Grid[i][j].isMine()) {
+                    Grid[i][j].setRevealed(true);
+                } else {
+
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    /**
      * Function to populate the Grid with squares based on the GameMode difficulty
      * 
      * @param gameMode
