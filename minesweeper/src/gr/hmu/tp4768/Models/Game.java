@@ -93,6 +93,8 @@ public class Game {
     /**
      * Function to reveal adjacent squares that have no adjacent mines.
      * Make sure that we do not go out of bounds.
+     * On the squares at the edge of the grid we need to check the adjacent squares
+     * and display the number of adjacent mines.
      * 
      * @param row
      * @param column
@@ -268,7 +270,7 @@ public class Game {
             }
         }
 
-        
+
         
         return adjacentMines;
     }
