@@ -15,6 +15,7 @@ public class SplashScreen extends JFrame {
 
     GameModeMenu _GameModeMenu;
     private String image = "src/gr/hmu/tp4768/Resources/splash.png";
+    public static boolean first_run = true; //indicate if we should actually show the splash screen
 
     /**
      * Creates new form SplashScreen
@@ -31,6 +32,7 @@ public class SplashScreen extends JFrame {
      * Then show the game mode menu.
      */
     public void initComponents() {
+       
         _GameModeMenu = new GameModeMenu(this);
         //hide controls
         this.setUndecorated(true);
@@ -38,19 +40,23 @@ public class SplashScreen extends JFrame {
         //center the frame
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setContentPane(new JPanel() {
-            @Override
-            public void paintComponent(java.awt.Graphics g) {
-                super.paintComponent(g);
-                g.drawImage(new javax.swing.ImageIcon(image).getImage(), 0, 0, null);
+        if (SplashScreen.first_run) {
+            SplashScreen.first_run = false;
+            this.setContentPane(new JPanel() {
+                @Override
+                public void paintComponent(java.awt.Graphics g) {
+                    super.paintComponent(g);
+                    g.drawImage(new javax.swing.ImageIcon(image).getImage(), 0, 0, null);
+                }
+            });
+            this.setVisible(true);
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        });
-        this.setVisible(true);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
+        
         this.setVisible(false);
         this.setContentPane(_GameModeMenu);
         this.setSize(200,140);
