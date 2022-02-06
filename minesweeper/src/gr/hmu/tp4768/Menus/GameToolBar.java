@@ -23,7 +23,8 @@ public class GameToolBar extends JMenuBar {
     private JButton _NewGameButton, _SaveGameButton, _LoadGameButton, _ExitButton, _HelpButton, _AboutButton;
     private JFrame _parent;
 
-    public GameToolBar() {
+    public GameToolBar(JFrame parent){
+        _parent = parent;
         initComponents();
     }
 
