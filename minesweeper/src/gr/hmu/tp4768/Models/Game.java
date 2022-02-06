@@ -102,40 +102,52 @@ public class Game {
      */
     public void revealAdjacentSquares(int row, int column, Square[][] grid) {
         if (row > 0 && row < grid.length - 1 && column > 0 && column < grid[0].length - 1) {
-            if (grid[row - 1][column - 1].isRevealed() == false && grid[row - 1][column - 1].isMine() == false && grid[row - 1][column - 1].isFlagged() == false && grid[row - 1][column - 1].getAdjacentMines() == 0) {
+            if (grid[row - 1][column - 1].isRevealed() == false && grid[row - 1][column - 1].isMine() == false
+                    && grid[row - 1][column - 1].isFlagged() == false
+                    && grid[row - 1][column - 1].getAdjacentMines() == 0) {
                 grid[row - 1][column - 1].clearButton();
                 revealAdjacentSquares(row - 1, column - 1, grid);
             }
-            if (grid[row - 1][column].isRevealed() == false && grid[row - 1][column].isMine() == false && grid[row - 1][column].isFlagged() == false && grid[row - 1][column].getAdjacentMines() == 0) {
+            if (grid[row - 1][column].isRevealed() == false && grid[row - 1][column].isMine() == false
+                    && grid[row - 1][column].isFlagged() == false && grid[row - 1][column].getAdjacentMines() == 0) {
                 grid[row - 1][column].clearButton();
                 revealAdjacentSquares(row - 1, column, grid);
             }
-            if (grid[row - 1][column + 1].isRevealed() == false && grid[row - 1][column + 1].isMine() == false && grid[row - 1][column + 1].isFlagged() == false && grid[row - 1][column + 1].getAdjacentMines() == 0) {
+            if (grid[row - 1][column + 1].isRevealed() == false && grid[row - 1][column + 1].isMine() == false
+                    && grid[row - 1][column + 1].isFlagged() == false
+                    && grid[row - 1][column + 1].getAdjacentMines() == 0) {
                 grid[row - 1][column + 1].clearButton();
                 revealAdjacentSquares(row - 1, column + 1, grid);
             }
-            if (grid[row][column - 1].isRevealed() == false && grid[row][column - 1].isMine() == false && grid[row][column - 1].isFlagged() == false && grid[row][column - 1].getAdjacentMines() == 0) {
+            if (grid[row][column - 1].isRevealed() == false && grid[row][column - 1].isMine() == false
+                    && grid[row][column - 1].isFlagged() == false && grid[row][column - 1].getAdjacentMines() == 0) {
                 grid[row][column - 1].clearButton();
                 revealAdjacentSquares(row, column - 1, grid);
             }
-            if (grid[row][column + 1].isRevealed() == false && grid[row][column + 1].isMine() == false && grid[row][column + 1].isFlagged() == false && grid[row][column + 1].getAdjacentMines() == 0) {
+            if (grid[row][column + 1].isRevealed() == false && grid[row][column + 1].isMine() == false
+                    && grid[row][column + 1].isFlagged() == false && grid[row][column + 1].getAdjacentMines() == 0) {
                 grid[row][column + 1].clearButton();
                 revealAdjacentSquares(row, column + 1, grid);
             }
-            if (grid[row + 1][column - 1].isRevealed() == false && grid[row + 1][column - 1].isMine() == false && grid[row + 1][column - 1].isFlagged() == false && grid[row + 1][column - 1].getAdjacentMines() == 0) {
+            if (grid[row + 1][column - 1].isRevealed() == false && grid[row + 1][column - 1].isMine() == false
+                    && grid[row + 1][column - 1].isFlagged() == false
+                    && grid[row + 1][column - 1].getAdjacentMines() == 0) {
                 grid[row + 1][column - 1].clearButton();
                 revealAdjacentSquares(row + 1, column - 1, grid);
             }
-            if (grid[row + 1][column].isRevealed() == false && grid[row + 1][column].isMine() == false && grid[row + 1][column].isFlagged() == false && grid[row + 1][column].getAdjacentMines() == 0) {
+            if (grid[row + 1][column].isRevealed() == false && grid[row + 1][column].isMine() == false
+                    && grid[row + 1][column].isFlagged() == false && grid[row + 1][column].getAdjacentMines() == 0) {
                 grid[row + 1][column].clearButton();
                 revealAdjacentSquares(row + 1, column, grid);
             }
-            if (grid[row + 1][column + 1].isRevealed() == false && grid[row + 1][column + 1].isMine() == false && grid[row + 1][column + 1].isFlagged() == false && grid[row + 1][column + 1].getAdjacentMines() == 0) {
+            if (grid[row + 1][column + 1].isRevealed() == false && grid[row + 1][column + 1].isMine() == false
+                    && grid[row + 1][column + 1].isFlagged() == false
+                    && grid[row + 1][column + 1].getAdjacentMines() == 0) {
                 grid[row + 1][column + 1].clearButton();
                 revealAdjacentSquares(row + 1, column + 1, grid);
             }
         }
-    
+
     }
 
     /**
@@ -145,7 +157,7 @@ public class Game {
      * 
      */
     public void displayMines(Square[][] Grid) {
-        //print text
+        // print text
         System.out.println("Mines:");
 
         for (int i = 0; i < Grid.length; i++) {
@@ -270,8 +282,6 @@ public class Game {
             }
         }
 
-
-        
         return adjacentMines;
     }
 }
