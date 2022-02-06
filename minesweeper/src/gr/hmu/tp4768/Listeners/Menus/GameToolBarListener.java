@@ -2,6 +2,10 @@ package gr.hmu.tp4768.Listeners.Menus;
 
 import javax.swing.JFrame;
 
+import gr.hmu.tp4768.App;
+import gr.hmu.tp4768.Menus.GameModeMenu;
+import gr.hmu.tp4768.Views.SplashScreen;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 /**
@@ -21,6 +25,8 @@ public class GameToolBarListener {
             public void actionPerformed(ActionEvent e) {
                 //Do stuff
                 //close parent
+                SplashScreen splashScreen = new SplashScreen();
+                splashScreen.setVisible(true);
                 parent.dispose();
             }
         };
@@ -36,7 +42,11 @@ public class GameToolBarListener {
             public void actionPerformed(ActionEvent e) {
                 //Do stuff
                 //close parent
+                //parent.dispose()
+
                 parent.dispose();
+
+
             }
         };
     }
