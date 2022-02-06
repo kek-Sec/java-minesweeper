@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 
 import gr.hmu.tp4768.App;
 import gr.hmu.tp4768.Menus.GameModeMenu;
+import gr.hmu.tp4768.Views.HelpScreen;
 import gr.hmu.tp4768.Views.SplashScreen;
 
 import java.awt.event.ActionListener;
@@ -90,8 +91,14 @@ public class GameToolBarListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Do stuff
-                //close parent
-                parent.dispose();
+                //create a new jframe with HelpScreen panel as content
+                JFrame helpFrame = new JFrame("Help");
+                helpFrame.setContentPane(new HelpScreen());
+                helpFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                helpFrame.pack();
+                helpFrame.setVisible(true);
+
+                
             }
         };
     }
