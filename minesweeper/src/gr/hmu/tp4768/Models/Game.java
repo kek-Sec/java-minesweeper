@@ -267,34 +267,9 @@ public class Game {
                 adjacentMines++;
             }
         }
-        // check the diagonal top left square, check that is not out of bounds
-        if (i - 1 >= 0 && j - 1 >= 0) {
-            // check if the diagonal top left square is a mine
-            if (grid2[i - 1][j - 1].isMine()) {
-                adjacentMines++;
-            }
-        }
-        // check the diagonal top right square, check that is not out of bounds
-        if (i - 1 >= 0 && j + 1 < maxColumns) {
-            // check if the diagonal top right square is a mine
-            if (grid2[i - 1][j + 1].isMine()) {
-                adjacentMines++;
-            }
-        }
-        // check the diagonal bottom left square, check that is not out of bounds
-        if (i + 1 < maxRows && j - 1 >= 0) {
-            // check if the diagonal bottom left square is a mine
-            if (grid2[i + 1][j - 1].isMine()) {
-                adjacentMines++;
-            }
-        }
-        // check the diagonal bottom right square, check that is not out of bounds
-        if (i + 1 < maxRows && j + 1 < maxColumns) {
-            // check if the diagonal bottom right square is a mine
-            if (grid2[i + 1][j + 1].isMine()) {
-                adjacentMines++;
-            }
-        }
+
+        
+        
         return adjacentMines;
     }
 }
