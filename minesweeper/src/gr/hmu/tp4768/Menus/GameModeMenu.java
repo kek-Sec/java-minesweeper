@@ -1,6 +1,7 @@
 package gr.hmu.tp4768.Menus;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -14,7 +15,7 @@ import gr.hmu.tp4768.Views.SplashScreen;
  */
 public class GameModeMenu extends JPanel {
 
-    SplashScreen _Parent;
+    JFrame _Parent;
     GameModeMenuListener _MenuListener;
     /**
      * Menu buttons
@@ -28,7 +29,7 @@ public class GameModeMenu extends JPanel {
      * form GameModeMenu
      * @param gameModeMenuListener
      */
-    public GameModeMenu(SplashScreen ParentFrame) {
+    public GameModeMenu(JFrame ParentFrame) {
         _Parent = ParentFrame;
         initComponents();
         this.setVisible(true);
