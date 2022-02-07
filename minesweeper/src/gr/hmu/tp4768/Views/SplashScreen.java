@@ -27,6 +27,17 @@ public class SplashScreen extends JFrame {
     }
 
     /**
+     * Creates new form SplashScreen
+     *
+     */
+    public SplashScreen(JFrame parent) {
+        initComponents();
+        this.setVisible(true);
+        parent.dispose();
+    }
+    
+
+    /**
      * Function to initialize the components of the splash screen.
      * Show the splash screen for 2 seconds.
      * Then show the game mode menu.
