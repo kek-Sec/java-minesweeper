@@ -31,6 +31,14 @@ public class BoardListener {
                 if (SwingUtilities.isLeftMouseButton(e)) {
                     // get the square that was clicked
                     Square square = squares[row][col];
+                    // if square is flagged , do nothing
+                    if (square.isFlagged()) {
+                        return;
+                    }
+                    // if square is revealed , do nothing
+                    if (square.isRevealed()) {
+                        return;
+                    }
 
                 }
                 // if right click
