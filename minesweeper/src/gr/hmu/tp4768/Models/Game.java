@@ -106,6 +106,14 @@ public class Game {
         int adjacentMines = grid[row][column].getAdjacentMines();
         // if the adjacent mines is 0, reveal the adjacent squares
         if (adjacentMines == 0) {
+            // check if all adjacent squares are revealed
+            if (this.checkAdjacentSquares(row, column, grid)) {
+                // reveal the square
+                grid[row][column].setRevealed(true);
+                // clear button
+                grid[row][column].clearButton();
+                return;
+            }
             // check the adjacent squares
             if (row > 0) {
                 if (column > 0) {
@@ -300,5 +308,75 @@ public class Game {
         }
 
         return adjacentMines;
+    }
+
+    /**
+     * Function to check if all adjacent squares have been revealed
+     *
+     * @param row
+     * @param column
+     * @param grid
+     *
+     */
+    public boolean checkAdjacentSquares(int row, int column, Square[][] grid) {
+        // check if the square to the left of the current square is a mine
+        if (column - 1 >= 0) {
+            // check if the square to the left of the current square is a mine
+            if (grid[row][column - 1].isRevealed()) {
+                return true;
+            }
+        }
+        // check if the square to the right of the current square is a mine
+        if (column + 1 < grid[0].length) {
+            // check if the square to the right of the current square is a mine
+            if (grid[row][column + 1].isRevealed()) {
+                return true;
+            }
+        }
+        // check if the square above the current square is a mine
+        if (row - 1 >= 0) {
+            // check if the square above the current square is a mine
+            if (grid[row - 1][column].isRevealed()) {
+                return true;
+            }
+        }
+        // check if the square below the current square is a mine
+        if (row + 1 < grid.length) {
+            // check if the square below the current square is a mine
+            if (grid[row + 1][column].isRevealed()) {
+                return true;
+            }
+        }
+        // check the square to the left of the current square, check that is not out of
+        // bounds
+        if (column - 1 >= 0) {
+            // check if the square to the left of the current square is a mine
+            if (grid[row][column - 1].isRevealed()) {
+                return true;
+            }
+        }
+        // check the square to the right of the current square, check that is not out of
+        // bounds
+        if (column + 1 < grid[0].length) {
+            // check if the square to the right of the current square is a mine
+            if (grid[row][column + 1].isRevealed()) {
+                return true;
+            }
+        }
+        // check the square above the current square, check that is not out of bounds
+        if (row - 1 >= 0) {
+            // check if the square above the current square is a mine
+            if (grid[row - 1][column].isRevealed()) {
+                return true;
+            }
+        }
+        // check the square below the current square, check that is not out of bounds
+        if (row + 1 < grid.length) {
+            // check if the square below the current square is a mine
+            if (grid[row + 1][column].isRevealed()) {
+                return true;
+            }
+        }
+        return false;
     }
 }
