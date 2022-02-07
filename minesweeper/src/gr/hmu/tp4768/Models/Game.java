@@ -2,7 +2,7 @@ package gr.hmu.tp4768.Models;
 
 /**
  * @author tp4768
- * 
+ *
  *         Model describing all the information about a running minesweeper
  *         game.
  *         Contains information such as,
@@ -12,17 +12,18 @@ package gr.hmu.tp4768.Models;
  *         - the number of mines revealed
  *         - the number of rows and columns in the game
  *         - the number of mines in each row and column
- * 
+ *
  *         In Grid array we store all the squares in the game. By row
  */
 public class Game {
     private int rows;
     private int columns;
     private Square[][] Grid;
+    public boolean isGameOver = false;
 
     /**
      * Constructor for the game.
-     * 
+     *
      * @param mines
      * @param minesLeft
      * @param minesFlagged
@@ -39,7 +40,7 @@ public class Game {
 
     /**
      * Empty constructor for the game.
-     * 
+     *
      * @return
      */
     public Game() {
@@ -95,7 +96,7 @@ public class Game {
      * Make sure that we do not go out of bounds.
      * On the squares at the edge of the grid we need to check the adjacent squares
      * and display the number of adjacent mines.
-     * 
+     *
      * @param row
      * @param column
      * @param grid
@@ -152,14 +153,13 @@ public class Game {
 
     /**
      * Function to display all the squares that are mines.
-     * 
+     *
      * @param Square[][]
-     * 
+     *
      */
     public void displayMines(Square[][] Grid) {
-        // print text
-        System.out.println("Mines:");
-
+        // update GameOver
+        this.isGameOver = true;
         for (int i = 0; i < Grid.length; i++) {
             for (int j = 0; j < Grid[i].length; j++) {
                 if (Grid[i][j].isMine()) {
@@ -173,7 +173,7 @@ public class Game {
 
     /**
      * Function to populate the Grid with squares based on the GameMode difficulty
-     * 
+     *
      * @param gameMode
      */
     public Square[][] populateGrid(GameMode gamemode, Square[][] Grid) {
@@ -207,7 +207,7 @@ public class Game {
     /**
      * Function to get the number of adjacent mines for a square, the max number of
      * adjacent mines is 8
-     * 
+     *
      * @param i     row
      * @param j     column
      * @param grid2 the grid
