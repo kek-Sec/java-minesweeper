@@ -41,6 +41,8 @@ public class GameFrame extends JFrame {
      * At the center of the frame is the board.
      */
     public void initComponents() {
+        //close all other JFrames
+        GameFrame.this.dispose();
         GameToolBar gameToolBar = new GameToolBar(this);
         Board board = new Board(this._gameMode);
         StatusBar statusBar = new StatusBar(this._gameMode.getNumberOfMines(), this._gameMode.getNumberOfFlags());
