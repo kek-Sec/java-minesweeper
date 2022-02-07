@@ -59,13 +59,15 @@ public class GameOver extends JFrame {
                 }
             });
         } else {
+            //game over screen
             // create panel
             JPanel panel = new JPanel();
             panel.setBounds(0, 0, 300, 200);
-            panel.setBackground(Color.BLACK);
+            //background light gray
+            panel.setBackground(Color.LIGHT_GRAY);
             add(panel);
             // create label
-            JLabel label = new JLabel("You Lost!");
+            JLabel label = new JLabel("Game Over");
             label.setBounds(100, 50, 100, 100);
             label.setForeground(Color.RED);
             label.setFont(new Font("Arial", Font.BOLD, 20));
@@ -81,6 +83,11 @@ public class GameOver extends JFrame {
                     SplashScreen splashScreen = new SplashScreen();
                 }
             });
+
+            // add button to panel
+            panel.add(button);
+            
+
         }
     }
 
