@@ -62,11 +62,15 @@ public class BoardListener {
                     if (!square.isRevealed()) {
                         // if the square is not flagged
                         if (!square.isFlagged()) {
-                            // flag the square
-                            square.setFlagged(true);
-                            square.setFlag();
-                            // decrease the number of flags
-                            StatusBar._flagsLeft--;
+                            // if there are flags left
+                            if (StatusBar._flagsLeft > 0) {
+                                // flag the square
+                                square.setFlagged(true);
+                                square.setFlag();
+                                // decrease the number of flags
+                                StatusBar._flagsLeft--;
+                            }
+
                         }
                         // if the square is flagged
                         else {
