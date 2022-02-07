@@ -111,6 +111,7 @@ public class Game {
                 if (column > 0) {
                     if (!grid[row - 1][column - 1].isRevealed()) {
                         grid[row - 1][column - 1].setRevealed(true);
+                        grid[row - 1][column - 1].clearButton();
                         revealAdjacentSquares(row - 1, column - 1, grid);
                     }
                 }
@@ -121,6 +122,7 @@ public class Game {
                 if (column < columns - 1) {
                     if (!grid[row - 1][column + 1].isRevealed()) {
                         grid[row - 1][column + 1].setRevealed(true);
+                        grid[row - 1][column + 1].clearButton();
                         revealAdjacentSquares(row - 1, column + 1, grid);
                     }
                 }
@@ -128,12 +130,14 @@ public class Game {
             if (column > 0) {
                 if (!grid[row][column - 1].isRevealed()) {
                     grid[row][column - 1].setRevealed(true);
+                    grid[row][column - 1].clearButton();
                     revealAdjacentSquares(row, column - 1, grid);
                 }
             }
             if (column < columns - 1) {
                 if (!grid[row][column + 1].isRevealed()) {
                     grid[row][column + 1].setRevealed(true);
+                    grid[row][column + 1].clearButton();
                     revealAdjacentSquares(row, column + 1, grid);
                 }
             }
@@ -141,6 +145,7 @@ public class Game {
                 if (column > 0) {
                     if (!grid[row + 1][column - 1].isRevealed()) {
                         grid[row + 1][column - 1].setRevealed(true);
+                        grid[row + 1][column - 1].clearButton();
                         revealAdjacentSquares(row + 1, column - 1, grid);
                     }
                 }
@@ -151,6 +156,7 @@ public class Game {
                 if (column < columns - 1) {
                     if (!grid[row + 1][column + 1].isRevealed()) {
                         grid[row + 1][column + 1].setRevealed(true);
+                        grid[row + 1][column + 1].clearButton();
                         revealAdjacentSquares(row + 1, column + 1, grid);
                     }
                 }
