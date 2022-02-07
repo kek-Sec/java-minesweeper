@@ -115,6 +115,8 @@ public class Square {
         this.button.setText(Integer.toString(this.adjacentMines));
         // set bg to dark gray
         this.button.setBackground(java.awt.Color.DARK_GRAY);
+        this.button.setForeground(java.awt.Color.WHITE);
+        this.button.setEnabled(false);
     }
 
     /**
