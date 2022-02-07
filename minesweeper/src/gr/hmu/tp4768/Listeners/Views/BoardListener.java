@@ -50,6 +50,8 @@ public class BoardListener {
                     }
                     // if square is not mine
                     game.revealAdjacentSquares(row, col, squares);
+                    // pretty print squares
+                    System.out.println(square.toString());
 
                 }
                 // if right click
