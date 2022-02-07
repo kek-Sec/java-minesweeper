@@ -27,6 +27,10 @@ public class BoardListener {
         return new MouseListener() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent e) {
+                // if Game is over do nothing
+                if (game.isGameOver) {
+                    return;
+                }
                 // if left click
                 if (SwingUtilities.isLeftMouseButton(e)) {
                     // get the square that was clicked
