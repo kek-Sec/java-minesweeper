@@ -4,6 +4,8 @@ import gr.hmu.tp4768.Menus.StatusBar;
 import gr.hmu.tp4768.Models.Game;
 import javax.swing.SwingUtilities;
 import gr.hmu.tp4768.Models.Square;
+import gr.hmu.tp4768.Views.GameOver;
+
 import java.awt.event.*;
 
 /**
@@ -29,6 +31,7 @@ public class BoardListener {
             public void mouseClicked(java.awt.event.MouseEvent e) {
                 // if Game is over do nothing
                 if (game.isGameOver) {
+                    GameOver gameOver = new GameOver(false);
                     return;
                 }
                 // if left click
