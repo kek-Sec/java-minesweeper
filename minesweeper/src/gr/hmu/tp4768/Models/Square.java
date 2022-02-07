@@ -81,6 +81,10 @@ public class Square {
      * @param isFlagged the isFlagged to set
      */
     public void setFlagged(boolean isFlagged) {
+        // if false remove button background image
+        if (!isFlagged) {
+            this.resetButton();
+        }
         this.isFlagged = isFlagged;
     }
 
@@ -137,11 +141,11 @@ public class Square {
     }
 
     /**
-     * Function to set the button text to F with a red outline.
+     * ction to set the button text to F with a red outline.
      */
     public void setFlag() {
         this.setRevealed(false);
-        this.button.setText("F");
+        this.button.setIcon(new javax.swing.ImageIcon(getClass().getResource("../resources/flag.png")));
         this.button.setForeground(java.awt.Color.RED);
     }
 
@@ -150,7 +154,8 @@ public class Square {
      */
     public void setMine() {
         this.setRevealed(true);
-        this.button.setText("M");
+        // set bg image to mine.png
+        this.button.setIcon(new javax.swing.ImageIcon(getClass().getResource("../resources/mine.png")));
         this.button.setBackground(java.awt.Color.RED);
         this.button.setForeground(java.awt.Color.WHITE);
     }
@@ -162,6 +167,8 @@ public class Square {
         this.setRevealed(false);
         this.button.setText("");
         this.button.setEnabled(true);
+        //remove icon
+        this.button.setIcon(null);
     }
 
     /**
