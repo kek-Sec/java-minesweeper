@@ -66,13 +66,17 @@ public class BoardListener {
                         // if the square is not flagged
                         if (!square.isFlagged()) {
                             // if there are flags left
-                            // if (StatusBar._flagsLeft > 0) {
-                            // flag the square
-                            square.setFlagged(true);
-                            square.setFlag();
-                            // decrease the number of flags
-                            StatusBar._flagsLeft--;
-                            // }
+                            if (StatusBar._flagsLeft > 0) {
+                                // flag the square
+                                square.setFlagged(true);
+                                square.setFlag();
+                                // decrease the number of flags
+                                StatusBar._flagsLeft--;
+                                // if the square is a mine
+                                if (square.isMine()) {
+                                    StatusBar._minesLeft--;
+                                }
+                            }
 
                         }
                         // if the square is flagged
@@ -84,6 +88,10 @@ public class BoardListener {
                                 square.resetButton();
                                 // increase the number of flags
                                 StatusBar._flagsLeft++;
+                                // if the square is a mine
+                                if (square.isMine()) {
+                                    StatusBar._minesLeft++;
+                                }
                             }
                         }
                     }
