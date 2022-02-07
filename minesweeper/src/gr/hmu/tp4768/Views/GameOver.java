@@ -25,7 +25,7 @@ public class GameOver extends JFrame {
      * 
      * @param isWon
      */
-    public GameOver(boolean isWon) {
+    public GameOver(boolean isWon,JFrame parent) {
         _isWon = isWon;
         setTitle("Game Over");
         setSize(300, 200);
@@ -55,7 +55,7 @@ public class GameOver extends JFrame {
             button.setFont(new Font("Arial", Font.BOLD, 20));
             button.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    SplashScreen splashScreen = new SplashScreen();
+                    SplashScreen splashScreen = new SplashScreen(parent);
                 }
             });
         } else {
@@ -80,7 +80,7 @@ public class GameOver extends JFrame {
             button.setFont(new Font("Arial", Font.BOLD, 20));
             button.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    SplashScreen splashScreen = new SplashScreen();
+                    SplashScreen splashScreen = new SplashScreen(parent);
                 }
             });
 
