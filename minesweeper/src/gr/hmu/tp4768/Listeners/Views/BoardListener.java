@@ -46,7 +46,10 @@ public class BoardListener {
                     // if square is mine
                     if (square.isMine()) {
                         game.displayMines(squares);
+                        return;
                     }
+                    // if square is not mine
+                    game.revealAdjacentSquares(row, col, squares);
 
                 }
                 // if right click
