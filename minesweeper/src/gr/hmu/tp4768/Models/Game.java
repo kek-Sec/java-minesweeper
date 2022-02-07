@@ -379,4 +379,52 @@ public class Game {
         }
         return false;
     }
+
+    /**
+     * Function to check if game is over,
+     * if all squares are either revealed or flagged
+     *
+     * @param grid
+     * @return true if game is over, false if not
+     */
+    public boolean checkGameOver(Square[][] grid) {
+        // set max number of rows
+        int maxRows = grid.length;
+        // set max number of columns
+        int maxColumns = grid[0].length;
+        // set number of mines
+        int mines = 0;
+        // set number of revealed squares
+        int revealedSquares = 0;
+        // set number of flagged squares
+        int flaggedSquares = 0;
+        // loop through the grid
+        for (int i = 0; i < maxRows; i++) {
+            for (int j = 0; j < maxColumns; j++) {
+                // check if the square is a mine
+                if (grid[i][j].isMine()) {
+                    mines++;
+                }
+                // check if the square is revealed
+                if (grid[i][j].isRevealed()) {
+                    revealedSquares++;
+                }
+                // check if the square is flagged
+                if (grid[i][j].isFlagged()) {
+                    flaggedSquares++;
+                }
+            }
+        }
+        // check if the number of mines equals the number of flagged squares
+        if (mines == flaggedSquares) {
+            // check if the number of revealed squares equals the number of squares
+            // minus the number of mines
+            if (revealedSquares == (maxRows * maxColumns) - mines) {
+                this.isGameOver = true;
+                return true;
+            }
+        }
+        this.isGameOver = false;
+        return false;
+    }
 }
