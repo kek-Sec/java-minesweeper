@@ -16,7 +16,7 @@ public class Square {
 
     /**
      * Constructor for the square.
-     * 
+     *
      * @param isMine
      * @param isRevealed
      * @param isFlagged
@@ -100,7 +100,7 @@ public class Square {
 
     /**
      * set the button of the square.
-     * 
+     *
      * @param button
      */
     public void setButton(JButton button) {
@@ -113,7 +113,7 @@ public class Square {
     public void setButtonText() {
         this.setRevealed(true);
         this.button.setText(Integer.toString(this.adjacentMines));
-        //set bg to dark gray
+        // set bg to dark gray
         this.button.setBackground(java.awt.Color.DARK_GRAY);
     }
 
@@ -168,7 +168,8 @@ public class Square {
      */
     @Override
     public String toString() {
-        return "Square [isMine=" + isMine + ", isRevealed=" + isRevealed + ", isFlagged=" + isFlagged + ", adjacentMines="
-                + adjacentMines + ", button=" + button + "]";
+        return "Square [isMine=" + isMine + ", isRevealed=" + isRevealed + ", isFlagged=" + isFlagged
+                + ", adjacentMines="
+                + adjacentMines + "]";
     }
 }
