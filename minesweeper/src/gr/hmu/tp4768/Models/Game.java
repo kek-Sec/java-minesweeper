@@ -213,7 +213,7 @@ public class Game {
      * @param grid2 the grid
      * @return
      */
-    private int getAdjacentMines(int i, int j, Square[][] grid2) {
+    public int getAdjacentMines(int i, int j, Square[][] grid2) {
         int adjacentMines = 0;
         // set max number of rows
         int maxRows = grid2.length;
