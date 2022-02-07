@@ -79,5 +79,29 @@ public class Board extends JPanel {
         // populate the board with mines , update Game
         _squares = _game.populateGrid(_gameMode, _squares);
         add(boardPanel, BorderLayout.CENTER);
+        // start the timer
+        startTimer();
+    }
+
+    /**
+     * Create a timer that checks every second if the game is over.
+     *
+     */
+    public void startTimer() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    if (_game.checkGameOver(_squares)) {
+                        GameOver gameOver = new GameOver(true);
+                    }
+                }
+            }
+        }).start();
     }
 }
