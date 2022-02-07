@@ -1,3 +1,3 @@
 ## JavaMinesweeper WIP
-[img](https://prnt.sc/26qa145)
-[img](https://prnt.sc/26qa0ib)
+![img](https://i.imgur.com/mADI6d5.png)
+![img](https://i.imgur.com/W0M5zFx.png)
