@@ -8,7 +8,7 @@ import java.awt.event.*;
 
 /**
  * @author tp4768
- * 
+ *
  *         MouseListener for the board buttons
  *         Every board button is a minesweeper square. defined in Square.java
  *         This class contains the logic for the minesweeper squares.
@@ -16,12 +16,12 @@ import java.awt.event.*;
 public class BoardListener {
     /**
      * Listener for the JButton right click event
-     * 
+     *
      * @param squares
      * @param row
      * @param col
      * @param game
-     * 
+     *
      */
     public MouseListener rightClick(Square[][] squares, int row, int col, Game game) {
         return new MouseListener() {
@@ -31,37 +31,9 @@ public class BoardListener {
                 if (SwingUtilities.isLeftMouseButton(e)) {
                     // get the square that was clicked
                     Square square = squares[row][col];
-                    // prety print the square
-                    System.out.println(square.toString());
-                    // if the square is not flagged
-                    if (!square.isFlagged()) {
-                        // if the square is not revealed
-                        if (!square.isRevealed()) {
-                            // if the square is a mine
-                            if (square.isMine()) {
-                                // reveal all the mines
-                                game.displayMines(squares);
-                                // show the game over dialog
-                                return;
-                            }
-                            // if the square is not a mine
-                            else {
-                                // if the square is not a mine and has no adjacent mines
-                                if (square.getAdjacentMines() == 0) {
-                                    // reveal all the adjacent squares
-                                    game.revealAdjacentSquares(row, col, squares);
-                                }
-                                // if the square is not a mine and has adjacent mines
-                                else {
-                                    // reveal the square
-                                    square.setButtonText();
-                                }
-                            }
-                        }
-                    }
-                    return;
+
                 }
-                //if right click
+                // if right click
                 if (SwingUtilities.isRightMouseButton(e)) {
                     // get the square that was clicked
                     Square square = squares[row][col];
@@ -72,17 +44,17 @@ public class BoardListener {
                             // flag the square
                             square.setFlagged(true);
                             square.setFlag();
-                            //decrease the number of flags
+                            // decrease the number of flags
                             StatusBar._flagsLeft--;
                         }
                         // if the square is flagged
                         else {
                             // unflag the square
-                            //if flagged
-                            if(square.isFlagged()){
+                            // if flagged
+                            if (square.isFlagged()) {
                                 square.setFlagged(false);
                                 square.resetButton();
-                                //increase the number of flags
+                                // increase the number of flags
                                 StatusBar._flagsLeft++;
                             }
                         }
