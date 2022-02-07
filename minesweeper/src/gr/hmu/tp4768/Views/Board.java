@@ -2,11 +2,11 @@ package gr.hmu.tp4768.Views;
 
 /**
  * @author tp4768
- * 
+ *
  * Board is a class that extends JPanel and is the main view of the game.
  * It receives the game mode as input and creates the board according to the
  * game mode.
- * 
+ *
  * @see JPanel
  * @see GameMode
  */
@@ -25,7 +25,7 @@ import gr.hmu.tp4768.Models.Game;
 import gr.hmu.tp4768.Models.GameMode;
 import gr.hmu.tp4768.Models.Square;
 
-public class Board extends JPanel{
+public class Board extends JPanel {
 
     private GameMode _gameMode;
     private int _rows;
@@ -33,12 +33,11 @@ public class Board extends JPanel{
     private Square[][] _squares;
     private Game _game;
     private BoardListener _boardListener;
-    
 
     /**
      * constructor
      */
-    public Board(GameMode gameMode){
+    public Board(GameMode gameMode) {
         _boardListener = new BoardListener();
         _game = new Game();
         _gameMode = gameMode;
@@ -50,17 +49,17 @@ public class Board extends JPanel{
     /**
      * Function to create the board according to the rows and columns counts.
      * Create one new button for each cell and add it to the board.
-     * 
+     *
      * @see JButton
      * @see GameToolBar
-     * 
+     *
      */
-    private void createBoard(){
+    private void createBoard() {
         setLayout(new BorderLayout());
         JPanel boardPanel = new JPanel();
         boardPanel.setLayout(new GridLayout(_rows, _columns));
         _squares = new Square[_rows][_columns];
-        //create a new button for each cell and add it to the board
+        // create a new button for each cell and add it to the board
         for (int i = 0; i < _rows; i++) {
             for (int j = 0; j < _columns; j++) {
                 _squares[i][j] = new Square();
@@ -71,15 +70,14 @@ public class Board extends JPanel{
                 button.setEnabled(true);
                 boardPanel.add(button);
                 _squares[i][j].setButton(button);
-                //add the listener to the button
-                //add listener to right click
+                // add the listener to the button
+                // add listener to right click
                 button.addMouseListener(_boardListener.rightClick(_squares, i, j, _game));
 
             }
         }
-        //populate the board with mines , update Game
-        _squares = _game.populateGrid(_gameMode,_squares);
+        // populate the board with mines , update Game
+        _squares = _game.populateGrid(_gameMode, _squares);
         add(boardPanel, BorderLayout.CENTER);
     }
-
-} 
+}
